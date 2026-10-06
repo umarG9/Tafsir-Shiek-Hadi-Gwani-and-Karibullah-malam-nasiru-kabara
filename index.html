@@ -1,0 +1,104 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tafsir Gidan Sarki - Hadi Gwani & Karibullah</title><style>@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Amiri:wght@700&display=swap');*{box-sizing:border-box;font-family:'Outfit',system-ui;margin:0;padding:0}body{background:#06000f;color:#fff;min-height:100vh}body::before{content:'';position:fixed;inset:0;background:radial-gradient(700px at 0% 0%,#0d4a1a 0%,transparent 50%),radial-gradient(800px at 100% 100%,#1a5c2a 0%,transparent 50%);z-index:-1}.h{background:linear-gradient(135deg,#0a3d16,#1a5c2a,#2d7a3d);padding:24px 20px;text-align:center;border-bottom:3px solid gold;box-shadow:0 10px 40px rgba(0,100,0,.4)}.h h1{font-weight:900;font-size:26px;letter-spacing:1px}.h h1 span{color:gold}.arabic{font-family:'Amiri',serif;color:gold;font-size:18px}.c{background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.04));backdrop-filter:blur(20px);margin:12px;padding:18px;border-radius:22px;border:1px solid rgba(255,255,255,.12);box-shadow:0 8px 30px rgba(0,0,0,.4)}.sheikh-card{background:linear-gradient(135deg,#0a3d16,#1a5c2a);padding:16px;border-radius:18px;border:2px solid rgba(255,215,0,.3);cursor:pointer;text-align:center}.sheikh-card.active{border-color:gold;background:linear-gradient(135deg,#1a5c2a,#2d8a3d);box-shadow:0 0 20px rgba(255,215,0,.3)}.audio-item{background:rgba(0,0,0,.3);padding:14px;border-radius:14px;margin:8px 0;border:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center}.play-btn{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,gold,#ff8a00);color:#000;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;border:none}.tab{width:auto;padding:10px 18px;border-radius:25px;margin:4px;font-size:13px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}.tab.active{background:gold;color:#000;font-weight:900}input,button,select{width:100%;padding:14px;margin:6px 0;border-radius:14px;border:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.3);color:#fff}button{background:linear-gradient(135deg,#1a5c2a,gold);color:#fff;font-weight:900;border:none;cursor:pointer}.hidden{display:none!important}.player-bar{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#0a3d16,#1a5c2a);padding:14px;border-top:2px solid gold;z-index:99}</style></head><body>
+<div class="h"><div class="arabic">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div><h1>📿 Tafsir <span>Gidan Sarki</span></h1><p style="font-size:12px;margin-top:6px;opacity:.9">Sheikh Hadi Gwani • Sheikh Karibullah • Gidan Sarkin Kano</p><p style="font-size:10px;margin-top:6px;background:rgba(0,0,0,.3);display:inline-block;padding:4px 12px;border-radius:20px">🕌 Ramadan 1447 / 2026</p></div>
+
+<div class="c" style="text-align:center"><p style="font-size:11px;opacity:.7">Zabi Malami</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px"><div class="sheikh-card active" id="s-hadi" onclick="setSheikh('Hadi')"><div style="font-size:40px">👳‍♂️</div><b>Sheikh Hadi Gwani</b><br><small style="color:gold">Tafsir Gidan Sarki</small><br><small style="font-size:10px">Kano</small></div><div class="sheikh-card" id="s-karib" onclick="setSheikh('Karibullah')"><div style="font-size:40px">👳‍♂️</div><b>Sheikh Karibullah</b><br><small style="color:gold">Tafsir Gidan Sarki</small><br><small style="font-size:10px">Kano</small></div></div></div>
+
+<div class="c" style="display:flex;justify-content:center;flex-wrap:wrap"><button onclick="tab('audios')" id="t-audios" class="tab active">🎧 Tafsirai</button><button onclick="tab('live')" id="t-live" class="tab">🔴 Live</button><button onclick="tab('upload')" id="t-upload" class="tab">⬆️ Saka Sauti</button><button onclick="tab('about')" id="t-about" class="tab">🕌 Bayani</button></div>
+
+<div id="audios" class="c"><h3>🎧 Tafsir - <span id="curSheikhName">Sheikh Hadi Gwani</span></h3><input id="search" placeholder="🔍 Nema tafsir..." oninput="filterAudios()"><div id="audioList" style="margin-top:10px"></div></div>
+
+<div id="live" class="c hidden"><h3>🔴 Live Tafsir - Gidan Sarki</h3><div style="background:rgba(255,0,0,.15);border:2px solid red;padding:20px;border-radius:18px;text-align:center"><div style="width:20px;height:20px;background:red;border-radius:50%;margin:0 auto;animation:blink 1s infinite"></div><h2 style="margin:10px 0">🔴 LIVE YANZU</h2><p id="liveTitle">Tafsir Gidan Sarkin Kano - Sheikh Hadi Gwani</p><p style="font-size:11px;opacity:.7;margin-top:6px">Daga Fadar Mai Martaba Sarkin Kano</p><audio controls style="width:100%;margin-top:12px" id="liveAudio"><source src="" type="audio/mpeg"></audio><button onclick="alert('Live zai fara da maghrib - 6:30pm')" style="margin-top:10px;background:red">🔴 Shiga Live</button></div><style>@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}</style></div>
+
+<div id="upload" class="c hidden"><h3>⬆️ Saka Sabon Tafsir (Admin - Umar Gwani)</h3><p style="font-size:11px;opacity:.7">Zaka iya turama sound din duka - zan saka a app</p><select id="upSheikh"><option value="Hadi">Sheikh Hadi Gwani</option><option value="Karibullah">Sheikh Karibullah</option></select><input id="upTitle" placeholder="Taken Tafsir: Misali - Tafsir 1 - Suratul Baqara"><input id="upDate" type="date"><input id="upFile" type="file" accept="audio/*"><p style="font-size:10px;opacity:.6">Ko ka saka link na audio:</p><input id="upLink" placeholder="https://...mp3"><button onclick="addAudio()">✅ Saka Tafsir a App</button><div style="background:rgba(255,215,0,.1);padding:10px;border-radius:12px;font-size:11px;margin-top:10px;border:1px solid rgba(255,215,0,.3)">💡 <b>Yadda zaka tura min sound:</b><br>1. Tura a WhatsApp<br>2. Ko ka upload a Google Drive ka bani link<br>3. Zan saka shi a app din nan take!</div></div>
+
+<div id="about" class="c hidden"><h3>🕌 Bayani - Gidan Sarki</h3><div style="background:rgba(0,0,0,.3);padding:14px;border-radius:14px"><p style="font-size:13px;line-height:1.6"><b>Tafsir Gidan Sarkin Kano</b><br><br>📍 Wuri: Fadar Mai Martaba Sarkin Kano<br>👳‍♂️ Malamai:<br>• Sheikh Hadi Gwani<br>• Sheikh Karibullah Nasiru Kabara<br><br>🕰️ Lokaci: Ramadan - Bayan Maghrib<br>📻 Ana sauraro kai tsaye a wannan app<br><br>Allah ya saka da alkhairi. Allah ya karawa Sarki lafiya.</p><p class="arabic" style="text-align:center;margin-top:12px">اللهم احفظ أمير كانو</p></div><div style="text-align:center;margin-top:12px"><p style="font-size:11px;font-weight:700">💎 Meenah.Ng / KeenatPay • Umar Gwani</p><p style="font-size:10px;opacity:.5">PalmPay: 09026133849 • Kano, Nigeria</p></div></div>
+
+<div id="player" class="hidden player-bar"><div style="display:flex;align-items:center;gap:12px"><button class="play-btn" id="mainPlay" onclick="togglePlay()">⏸️</button><div style="flex:1"><b id="pTitle" style="font-size:13px">Tafsir...</b><br><small id="pSheikh" style="font-size:10px;opacity:.7">Sheikh Hadi</small><div style="background:rgba(0,0,0,.3);height:4px;border-radius:10px;margin-top:6px"><div id="pBar" style="height:4px;background:gold;width:0%;border-radius:10px"></div></div></div><button onclick="document.getElementById('player').classList.add('hidden')" style="width:auto;background:rgba(255,255,255,.1);padding:8px 12px">✕</button></div><audio id="mainAudio" ontimeupdate="updBar()" onended="nextAudio()"></audio></div>
+
+<div style="height:90px"></div>
+
+<script>
+let curSheikh='Hadi';
+let audios=JSON.parse(localStorage.getItem('tafsir_audios')||'[]');
+if(audios.length==0){
+  audios=[
+    {id:1,sheikh:'Hadi',title:'Tafsir 1 - Suratul Fatiha - Gidan Sarki',date:'2026-03-01',url:'',duration:'45:20'},
+    {id:2,sheikh:'Hadi',title:'Tafsir 2 - Suratul Baqara Ayata 1-10',date:'2026-03-02',url:'',duration:'52:10'},
+    {id:3,sheikh:'Karibullah',title:'Tafsir 1 - Muqaddima - Gidan Sarki',date:'2026-03-01',url:'',duration:'48:00'},
+    {id:4,sheikh:'Karibullah',title:'Tafsir 2 - Suratul Baqara',date:'2026-03-02',url:'',duration:'50:30'}
+  ];
+  localStorage.setItem('tafsir_audios',JSON.stringify(audios));
+}
+let curIdx=0;
+
+function setSheikh(s){
+  curSheikh=s;
+  document.querySelectorAll('.sheikh-card').forEach(c=>c.classList.remove('active'));
+  document.getElementById(s=='Hadi'?'s-hadi':'s-karib').classList.add('active');
+  document.getElementById('curSheikhName').innerText=s=='Hadi'?'Sheikh Hadi Gwani':'Sheikh Karibullah';
+  renderAudios();
+}
+function tab(i){
+  ['audios','live','upload','about'].forEach(x=>document.getElementById(x).classList.add('hidden'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(i).classList.remove('hidden');
+  document.getElementById('t-'+i).classList.add('active');
+}
+function renderAudios(){
+  let q=(document.getElementById('search').value||'').toLowerCase();
+  let list=document.getElementById('audioList');
+  let filtered=audios.filter(a=>a.sheikh==curSheikh && a.title.toLowerCase().includes(q));
+  if(filtered.length==0){list.innerHTML='<p style="text-align:center;opacity:.5;padding:20px">Babu tafsir - Saka a Upload</p>';return;}
+  list.innerHTML=filtered.map((a,i)=>`
+    <div class="audio-item">
+      <div style="flex:1"><b style="font-size:13px">${a.title}</b><br><small style="font-size:10px;opacity:.6">${a.date} • ${a.duration} • ${a.sheikh=='Hadi'?'Hadi Gwani':'Karibullah'}</small></div>
+      <button class="play-btn" onclick="playAudio(${audios.indexOf(a)})">▶️</button>
+      <button style="width:auto;margin-left:6px;background:rgba(255,0,0,.2);padding:8px 10px;font-size:10px" onclick="delAudio(${audios.indexOf(a)})">🗑️</button>
+    </div>
+  `).join('');
+}
+function playAudio(idx){
+  curIdx=idx;
+  let a=audios[idx];
+  document.getElementById('pTitle').innerText=a.title;
+  document.getElementById('pSheikh').innerText=(a.sheikh=='Hadi'?'Sheikh Hadi Gwani':'Sheikh Karibullah')+' • Gidan Sarki';
+  let ma=document.getElementById('mainAudio');
+  if(a.url){ma.src=a.url;ma.play();}else{alert('⚠️ Audio file ba a saka ba tukuna - Saka a Upload:\n\n'+a.title+'\n\nTura min sound din a WhatsApp zan saka!'); return;}
+  document.getElementById('player').classList.remove('hidden');
+  document.getElementById('mainPlay').innerText='⏸️';
+}
+function togglePlay(){
+  let ma=document.getElementById('mainAudio');
+  if(ma.paused){ma.play();document.getElementById('mainPlay').innerText='⏸️';}else{ma.pause();document.getElementById('mainPlay').innerText='▶️';}
+}
+function updBar(){
+  let ma=document.getElementById('mainAudio');
+  if(ma.duration){document.getElementById('pBar').style.width=(ma.currentTime/ma.duration*100)+'%';}
+}
+function nextAudio(){
+  let next=audios.findIndex((a,i)=>i>curIdx && a.sheikh==curSheikh);
+  if(next>=0) playAudio(next);
+}
+function filterAudios(){renderAudios();}
+function addAudio(){
+  let title=document.getElementById('upTitle').value;
+  let sheikh=document.getElementById('upSheikh').value;
+  let date=document.getElementById('upDate').value||new Date().toISOString().split('T')[0];
+  let file=document.getElementById('upFile').files[0];
+  let link=document.getElementById('upLink').value;
+  if(!title) return alert('Saka taken tafsir');
+  let url=link;
+  if(file){
+    url=URL.createObjectURL(file);
+  }
+  if(!url) url=''; // Zai jira ka tura
+  audios.unshift({id:Date.now(),sheikh:sheikh,title:title,date:date,url:url,duration:'--:--'});
+  localStorage.setItem('tafsir_audios',JSON.stringify(audios));
+  renderAudios();
+  alert('✅ Tafsir "'+title+'" an saka shi! Yanzu zai bayyana a list.');
+  document.getElementById('upTitle').value='';
+  document.getElementById('upLink').value='';
+}
+function delAudio(idx){if(confirm('Ka tabbata kana son gogewa?')){audios.splice(idx,1);localStorage.setItem('tafsir_audios',JSON.stringify(audios));renderAudios();}}
+renderAudios();
+</script></body></html>
